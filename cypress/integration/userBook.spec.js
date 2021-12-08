@@ -200,6 +200,7 @@ describe('User Book actions', () => {
     cy.get('input[value="get_recent_book_list"]').next('input').click();
     cy.get('a').contains('Cypress Test Book').prev('label').click();
     cy.get('input[value="Delete selected books"]').click();
+    cy.contains('error').should('have.length', 0);
   });
 
 });
