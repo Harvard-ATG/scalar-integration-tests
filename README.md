@@ -13,7 +13,7 @@ $ npm install
 
 ### Scalar setup
 
-In order for the tests to work properly, you'll need a valid url where scalar is being hosted. You will also need to create a test-user for cypress to run the tests.
+In order for the tests to work properly, you'll need a valid url where scalar is being hosted. You will also need to create a test-user for cypress to run the tests. This test user should be given super user permissions in order to delete the book, otherwise you will need to manually delete the "Cypress Test Book" after running the test suite.
 
 ### Configuration
 

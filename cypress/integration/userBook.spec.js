@@ -47,11 +47,11 @@ describe('User Book actions', () => {
     cy.loginScalar();
     cy.get('a').contains('Cypress Test Book').click();
     cy.get('a[id="editIcon"]').click();
-    cy.wait(2000);
+    cy.wait(4000);
     cy.typeAndSelectCke("Linked media text");
-    cy.wait(1000);
+    cy.wait(2000);
     cy.get('a[title="Insert Scalar Media Link"]').click();
-    cy.wait(1000);
+    cy.wait(2000);
     cy.get('tbody[class="node_rows"]').children('tr').first().click();
     cy.get('input[value="Continue"]').click();
     cy.get('input[value="Save and view"]').click();
@@ -62,9 +62,9 @@ describe('User Book actions', () => {
     cy.loginScalar();
     cy.get('a').contains('Cypress Test Book').click();
     cy.get('a[id="editIcon"]').click();
-    cy.wait(1000);
+    cy.wait(4000);
     cy.get('a[title="Insert Inline Scalar Media Link"]').click();
-    cy.wait(1000);
+    cy.wait(2000);
     cy.get('tbody[class="node_rows"]').children('tr').first().click();
     cy.get('input[value="Continue"]').click();
   });
@@ -75,7 +75,7 @@ describe('User Book actions', () => {
     cy.loginScalar();
     cy.get('a').contains('Cypress Test Book').click();
     cy.get('a[id="editIcon"]').click();
-    cy.wait(2000);
+    cy.wait(4000);
     cy.typeAndSelectCke("Note text");
     cy.wait(1000);
     cy.get('a[title="Insert Scalar Note"]').click();
@@ -93,14 +93,20 @@ describe('User Book actions', () => {
   it('Creates a path', () => {
     cy.loginScalar();
     cy.get('a').contains('Cypress Test Book').click();
+    cy.wait(1000);
     cy.createPage('Test Page 2', 'This is a second test page');
+    cy.wait(1000);
     cy.createPage('Test Page 3', 'This is a third test page');
+    cy.wait(1000);
     cy.get('a[id="editIcon"]').click();
+    cy.wait(3000);
     cy.get('li').contains('Relationships').click();
+    cy.wait(1000);
     cy.get('a[href="#path-pane"]').click();
     cy.get('a').contains('choose the items that it contains').click();
     cy.get('input[type="checkbox"]').filter(':visible').first().check();
     cy.get('a').contains('Add Selected').click();
+    cy.wait(2000);
     cy.contains('This page is a path which contains').should('have.length', 1)
     cy.get('input').contains('Save and view').click();
     cy.wait(1000);
@@ -111,7 +117,9 @@ describe('User Book actions', () => {
     cy.loginScalar();
     cy.get('a').contains('Cypress Test Book').click();
     cy.get('a[id="editIcon"]').click();
+    cy.wait(3000);
     cy.get('li').contains('Relationships').click();
+    cy.wait(1000);
     cy.get('a[href="#tag-pane"]').click();
     cy.get('a').contains('choose the items that it tags').click();
     cy.get('input[type="checkbox"]').filter(':visible').first().check();
@@ -184,7 +192,7 @@ describe('User Book actions', () => {
   });
 
   // 16. User performs a search
-  it('Performs a serach', () => {
+  it('Performs a search', () => {
     cy.loginScalar();
     cy.get('a').contains('Cypress Test Book').click();
     cy.get('a[id="searchIcon"]').click();
