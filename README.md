@@ -42,6 +42,6 @@ $ npm run run:scalar:dev
 
 ### What has been omitted?
 
-1. Tests that involve clicking and draggin. Clicking and dragging was not so simple to solve for these tests. So I ommited anything where that was involved, which includes annotation tests, and rearranging ordered lists (like the table of contents)
+1. Tests that involve clicking and dragging. Clicking and dragging was not so simple to solve for these tests. So I ommited anything where that was involved, which includes annotation tests, and rearranging ordered lists (like the table of contents)
 
 2. Anonymous user visits a book. I'm not sure that is totally necessary.
