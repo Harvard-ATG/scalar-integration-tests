@@ -38,7 +38,7 @@ $ npm run run:scalar:dev
 ## Notes
 
 - The tests are as reliable as scalar itself and your network connection. They are not unit tests, and will not always produce the same results.
-- The final test is to delete the test book that is created during the tests. Sometimes, that sep may fail. In that case you will need to manually clean up the test book that was created.
+- The final test is to delete the test book that is created during the tests. Sometimes, that step may fail. In that case you will need to manually clean up the test book that was created.
 
 ### What has been omitted?
 
