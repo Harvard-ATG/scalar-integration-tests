@@ -2,7 +2,8 @@
     "baseUrl": "https://your-scalar-installation.com",
     "env": {
         "testUser": "",
-        "testPassword": ""
+        "testPassword": "",
+        "testUserFullName":""
     },
     "chromeWebSecurity": false
 }

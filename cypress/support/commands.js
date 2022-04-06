@@ -32,4 +32,12 @@ Cypress.Commands.add('typeAndSelectCke', (text) => {
   });
 });
 
-
+Cypress.Commands.add('addManifest', (title, manifest, timeout, wait) => {
+  cy.get('a[href="https://scalar-dev.fas.harvard.edu/features-test-book/new.edit?type=media&"]').click({force: true})
+  cy.wait(wait || 3000);
+  cy.get('#title').type(title, { timeout: timeout || 30000 })
+  cy.get('#page_description').type(title)
+  cy.get('#media_file_url').type(manifest)
+  cy.get('select[name="media-type"]').select('IIIF manifest')
+  cy.get('input[value="Save and view"]').click()
+});
