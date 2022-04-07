@@ -33,7 +33,7 @@ describe("FAS Features", () => {
   });
 
   // https://github.com/Harvard-ATG/scalar/pull/18
-  it('Checks if "My Pages" is present in "Categories" tab', () => {
+  it('Checks if "My Pages" and "My Media" is present in "Categories" "Media" tab respectively', () => {
     cy.loginScalar();
     cy.get("a").contains("Dashboard").click();
     cy.get("a").contains("My account").click();
@@ -42,7 +42,11 @@ describe("FAS Features", () => {
     cy.get('a[href="#tabs-categories"]')
       .contains("Categories")
       .click({ force: true });
-    cy.get('input[id="my_pages"]').click();
+    cy.get('input[id="my_pages"]').click().wait(3000)
+    cy.get('a[href="#tabs-media"]')
+      .contains("Media")
+      .click({ force: true });
+    cy.get('input[id="my_media"]').click();
   });
 
   //   https://github.com/Harvard-ATG/scalar/pull/16
