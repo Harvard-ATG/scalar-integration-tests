@@ -3,7 +3,11 @@
     "env": {
         "testUser": "",
         "testPassword": "",
-        "testUserFullName":""
+        "testUserFullName":"",
+        "ENVIRONMENT": "default"
     },
-    "chromeWebSecurity": false
+    "chromeWebSecurity": false,
+    // to turn on video recording and screenshotOnRunFailure change to true
+    "video": false
+    "screenshotOnRunFailure": false
 }

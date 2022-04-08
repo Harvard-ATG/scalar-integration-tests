@@ -32,8 +32,8 @@ Cypress.Commands.add('typeAndSelectCke', (text) => {
   });
 });
 
-Cypress.Commands.add('addManifest', (title, manifest, timeout, wait) => {
-  cy.get('a[href="https://scalar-dev.fas.harvard.edu/features-test-book/new.edit?type=media&"]').click({force: true})
+Cypress.Commands.add('addManifest', (title, bookNamePrefix, manifest, timeout, wait) => {
+  cy.get(`a[href$="${bookNamePrefix}/new.edit?type=media&"]`).click({force: true})
   cy.wait(wait || 3000);
   cy.get('#title').type(title, { timeout: timeout || 30000 })
   cy.get('#page_description').type(title)

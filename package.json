@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "open:scalar:dev": "cypress open --config-file cypress/config/scalarConfig.json",
-    "run:scalar:dev": "cypress run --spec 'cypress/integration/scalar/*' --config-file cypress/config/scalarConfig.json"
+    "run:scalar:dev": "cypress run --spec 'cypress/integration/*' --config-file cypress/config/scalarConfig.json"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Harvard-ATG/scalar-integration-tests#readme",
   "dependencies": {},
   "devDependencies": {
+    "@cypress/skip-test": "^2.6.1",
     "cypress": "^9.5.3"
   }
 }
